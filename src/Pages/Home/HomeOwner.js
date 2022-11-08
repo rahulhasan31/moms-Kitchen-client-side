@@ -3,7 +3,7 @@ import React from 'react';
 const HomeOwner = () => {
     return (
         <div>
-            <div className="bg-gray-200  mt-5">
+            <div className="bg-blue-100  mt-10">
         <div className="py-14 px-3">
           <div className="lg:max-w-[1440px] relative inset-0 md:max-w-[744px] max-w-[375px] mx-auto bg-white lg:px-20 md:px-6 px-4 lg:py-20 md:py-12 py-9">
             <div className="relative">

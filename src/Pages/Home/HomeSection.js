@@ -7,7 +7,7 @@ const HomeSection = () => {
         <div>
          <div>
             <section>
-            <div className="w-full relative pb-10 px-6 xl:px-0">
+            <div className="w-full bg-blue-100 relative pb-10 px-6 xl:px-0">
                 <img className="absolute w-full inset-0 h-full object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/hero2-bg.png" alt="we care family"/>
                 
                

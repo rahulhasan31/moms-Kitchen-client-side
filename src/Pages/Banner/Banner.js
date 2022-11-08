@@ -3,7 +3,7 @@ import React from 'react';
 const Banner = () => {
     return (
         <div>
-              <div className="2xl:mx-auto 2xl:container mx-4 py-16">
+              <div className="drop-shadow-md 2xl:mx-auto 2xl:container mx-4 py-16">
             <div className=" w-full h-full relative flex items-center justify-center">
                 <img src="https://banuphotography.com/wp-content/uploads/2021/06/mannar-wedding-77.jpg" alt="dining" className="w-full h-full absolute z-0 hidden xl:block" />
                 <img src="https://banuphotography.com/wp-content/uploads/2021/06/mannar-wedding-77.jpg" alt="dining" className="w-full h-full absolute z-0 hidden sm:block xl:hidden" />

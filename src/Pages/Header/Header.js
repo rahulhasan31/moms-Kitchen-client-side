@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Header = () => {
     const { logOut, user } = useContext(AuthContext)
+    const [open, setOpen] = useState(false);
     const menuItems = <>
     <li>
       <Link className='font-semibold ' to={'/'}>Home</Link>
@@ -55,7 +56,27 @@ const Header = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            <button className="btn btn-outline btn-warning">Appointment</button>
+          {
+              user?.photoURL?
+              <>
+             <div className='d-flex' onMouseOver={() => setOpen(true)} onMouseOut={() => setOpen(false)}>
+             <img className='mt-2' src={user?.photoURL}
+              roundedCircle
+              style={{height:'40px'}}
+              >
+                
+              </img>
+              <div className=' text-red-600'>
+             {open ? user?.displayName  : '' }
+             </div>
+             </div>
+            
+              </>
+              :
+              ''
+
+             }
+
           </div>
         </div>
                 

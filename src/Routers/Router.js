@@ -1,6 +1,7 @@
 import Main from "../LayOut/Main";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
+import PrivateRoute from "../Pages/PrivateRoute";
 import Register from "../Pages/Register/Register";
 import Reviews from "../Shared/Reviews";
 import Services from "../Shared/Services";
@@ -27,8 +28,8 @@ const router=createBrowserRouter([
             element:<Register></Register>
         },
         {
-          path: '/services ',
-          element:<Services></Services>
+          path:'/services',
+          element:<PrivateRoute><Services></Services></PrivateRoute>
         },
         {
             path : '/reviews',

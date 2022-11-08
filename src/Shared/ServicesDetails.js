@@ -12,19 +12,47 @@ const ServicesDetails = () => {
        const form=event.target
        const name= `${form.name.value} `
        const email= user?.email || 'unregister'
-       const photo= user?.photoURL|| 'no photo'
-       const message=form.message.value
+        const message= form.message.value
 
-       const order= {
+       const review= {
          service:_id,
          serviceName: title,
          price,
-       customer: name,
-         photo,
+         customer:name, 
          email,
          message
 
        }
+
+
+       fetch('http://localhost:5000/reviews', {
+
+           method : "POST",
+           headers: {
+
+            'content-type':'application/json'
+           },
+           body : JSON.stringify(review)
+
+       })
+       .then(res=>res.json())
+       .then(data=>{
+        console.log(data);
+        if(data.acknowledged){
+           alert('reviews Done')
+           form.reset()
+        }
+       })
+       .catch(e=>console.log(e))
+
+
+
+
+
+
+
+
+
     }
     
 
@@ -47,12 +75,13 @@ const ServicesDetails = () => {
 </div>
 
       <div className='grid grid-cols-1  mt-6 gap-10'>
-      <form onClick={handlePlaceSubmit}>
+      <form onSubmit={handlePlaceSubmit}>
+
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
         <input name='name' type="name" readOnly defaultValue={user?.displayName} placeholder="Type here" className="input input-bordered w-full " />
        <input name='email' type="email" readOnly defaultValue={user?.email} placeholder="Type here" className="input input-bordered w-full " />
-       <input name='photo' type="photo" placeholder="Type here" className="input input-bordered w-full " />
-       <input type="text" placeholder="Type here" className="input input-bordered w-full " />
+    
+       
         </div>
         <br />
         <div className='mb-5'>

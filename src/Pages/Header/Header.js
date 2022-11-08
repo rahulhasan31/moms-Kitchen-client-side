@@ -62,7 +62,7 @@ const Header = () => {
               <>
              <div className='d-flex' onMouseOver={() => setOpen(true)} onMouseOut={() => setOpen(false)}>
              <img className='mt-2' src={user?.photoURL}
-              roundedCircle
+              
               style={{height:'40px'}}
               >
                 

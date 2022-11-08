@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 const HomeCardDetails = ({card}) => {
@@ -8,6 +9,7 @@ const HomeCardDetails = ({card}) => {
         <div>
            <div className="card w-96 bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
+    
     <img src={img} alt="Shoes" className="rounded-xl" />
   </figure>
   <div className="card-body items-center text-center">
@@ -18,8 +20,9 @@ const HomeCardDetails = ({card}) => {
      {description}
   
     }</p>
+    <p className="card-title text-red-700">price: ${price}</p>
     <div className="card-actions">
-      <Link to={`/services/${_id}`} > <button className="btn btn-primary">Buy Now</button></Link>
+      <Link to={`/services/${_id}`} > <button className="btn btn-primary">Details</button></Link>
     </div>
     
   </div>

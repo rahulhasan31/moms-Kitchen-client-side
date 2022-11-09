@@ -6,7 +6,7 @@ const ReviewRow = ({review}) => {
     const {user}= useContext(AuthContext)
     const [menu, setMenu] = useState(true);
     const [reviewService, setReviewService]= useState({})
-    const {serviceName,service, customer, email, message, price}=review
+    const {serviceName,service, customer, email, _id, message, price}=review
    
     useEffect(()=>{
         fetch(`http://localhost:5000/services/${service}`)
@@ -14,13 +14,41 @@ const ReviewRow = ({review}) => {
    
         .then(data=>setReviewService(data) )
     },[service])
-console.log(reviewService);
+   console.log(reviewService);
+
+     const handelDelete=id=>{
+         const procced= window.confirm('Are you sure delete review?')
+
+         if(procced){
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method : "DELETE"
+            })
+            .then(res=> res.json())
+            .then(data =>{
+                console.log(data);
+                if(data.deletedCount > 0 ){
+                   alert('deleted success')
+                   const remainin= review.filter(r=> r._id !== id)
+                   setReviewService(remainin)
+                }
+
+            })
+
+         }
+     }
+
+
+
     return (
-        <div className="py-12 px-4 md:px-6 2xl:px-0 2xl:container 2xl:mx-auto flex justify-center items-center">
+        <form >
+            <div className="py-12 px-4 md:px-6 2xl:px-0 2xl:container 2xl:mx-auto flex justify-center items-center">
         <div className="flex flex-col justify-start items-start w-full space-y-8">
+            
             <div className="flex justify-start items-start">
                 <p className="text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800">Reviews</p>
             </div>
+            <button onClick={()=>handelDelete(_id)} className='btn btn-error'>delete</button>
+            
             <div className="w-full flex justify-start items-start flex-col bg-gray-50 p-8">
                 <div className="flex flex-col md:flex-row justify-between w-full">
                     <div className="flex flex-row justify-between items-start">
@@ -162,6 +190,7 @@ console.log(reviewService);
             </div>
         </div>
     </div>
+        </form>
     );
 };
 

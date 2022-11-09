@@ -25,14 +25,19 @@ const Reviews = () => {
 
     return (
         <div>
-           <p>{reviews.length}</p>
-       
-          {
-            reviews.map(review=> <ReviewRow
-            key={review._id}
-            review={review}
-            ></ReviewRow>)
-          }
+           
+
+           {
+             reviews?.length === 0 ? <p className='text-xl text-black'>No Reviews</p> : <>
+             {
+                reviews.map(review=> <ReviewRow
+                key={review._id}
+                review={review}
+                ></ReviewRow>)
+              }
+              </>
+           }
+        
         </div>
     );
 };

@@ -85,8 +85,11 @@ const ServicesDetails = () => {
         </div>
         <br />
         <div className='mb-5'>
-        <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="Your Reviews"></textarea>
+        <textarea  name='message' className="textarea textarea-bordered h-24 w-full" placeholder="Your Reviews" required></textarea>
         <input className="btn btn-wide btn-warning" type="submit" value="Send Your Reviews" />
+
+        <Link className='mx-1' to={'/services'}><input className="btn btn-wide btn-warning" type="submit" value="Go to services" /></Link>
+         
         </div>
        </form>
       </div>

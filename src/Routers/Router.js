@@ -1,4 +1,5 @@
 import Main from "../LayOut/Main";
+import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import PrivateRoute from "../Pages/PrivateRoute";
@@ -13,6 +14,7 @@ const router=createBrowserRouter([
   {
     path:'/',
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>, 
     children: [
 
         {
@@ -35,13 +37,13 @@ const router=createBrowserRouter([
         },
         {
           path: "/services/:id",
-          element: <ServicesDetails></ServicesDetails>,
+          element: <PrivateRoute><ServicesDetails></ServicesDetails></PrivateRoute>,
           loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`) 
         },
        
         {
             path : '/reviews',
-            element: <Reviews></Reviews>
+            element: <PrivateRoute><Reviews></Reviews></PrivateRoute>
         }
     
     ]

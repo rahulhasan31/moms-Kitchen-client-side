@@ -1,5 +1,6 @@
 import { data } from 'autoprefixer';
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 
 const ReviewRow = ({review}) => {
@@ -48,6 +49,8 @@ const ReviewRow = ({review}) => {
                 <p className="text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800">Reviews</p>
             </div>
             <button onClick={()=>handelDelete(_id)} className='btn btn-error'>delete</button>
+
+           <Link to={`/reviews/${_id}`}> <button className='btn btn-error'>Edit</button></Link>
             
             <div className="w-full flex justify-start items-start flex-col bg-gray-50 p-8">
                 <div className="flex flex-col md:flex-row justify-between w-full">
@@ -130,45 +133,19 @@ const ReviewRow = ({review}) => {
                             </div>
                         </div>
                         <div className="carousel-cell">
-                            <div className="md:w-full h-full relative">
-                            {
-                                reviewService?.img && 
-                                <img src={reviewService.img} alt="wallet" className="w-full h-full object-fit object-cover" />
-                              }
-                            </div>
+                           
                         </div>
                         <div className="carousel-cell">
-                            <div className="md:w-full h-full relative">
-                            {
-                                reviewService?.img && 
-                                <img src={reviewService.img} alt="wallet" className="w-full h-full object-fit object-cover" />
-                              }
-                            </div>
+                           
                         </div>
                         <div className="carousel-cell">
-                            <div className="md:w-full h-full relative">
-                            {
-                                reviewService?.img && 
-                                <img src={reviewService.img} alt="wallet" className="w-full h-full object-fit object-cover" />
-                              }
-                            </div>
+                            
                         </div>
                         <div className="carousel-cell">
-                            <div className="md:w-full h-full relative">
-                            {
-                                reviewService?.img && 
-                                <img src={reviewService.img} alt="wallet" className="w-full h-full object-fit object-cover" />
-                              }
-                            </div>
+                            
                         </div>
                         <div className="carousel-cell">
-                            <div className="md:w-full h-full relative">
-                              {
-                                reviewService?.img && 
-                                <img src={reviewService.img} alt="wallet" className="w-full h-full object-fit object-cover" />
-                              }
-                               
-                            </div>
+                          
                         </div>
                         <div className="carousel-cell"></div>
                     </div>

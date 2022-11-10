@@ -14,6 +14,7 @@ useTitle("Add Services")
       const img= form.img.value
       const price= form.price.value
       const description= form.description.value
+      
 
       console.log(title,img, price, description);
 
@@ -21,7 +22,9 @@ useTitle("Add Services")
         title,
         img,
         price,
-        description
+        description,
+        created :  Date()
+
 
       }
 

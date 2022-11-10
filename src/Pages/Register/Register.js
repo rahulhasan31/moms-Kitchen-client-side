@@ -2,8 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/Login-amico.png'
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../Hook/UseTitle';
 
 const Register = () => {
+    useTitle('Register')
     const [showpass, setShowPass] = useState(false)
     const {createUser, updateProfileUser}= useContext(AuthContext)
     const [error, setError]= useState([])

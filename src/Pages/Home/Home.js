@@ -1,4 +1,5 @@
 import React from 'react';
+import useTitle from '../../Hook/UseTitle';
 
 import Banner from '../Banner/Banner';
 import HomeCard from './HomeCard';
@@ -7,6 +8,7 @@ import HomeSection from './HomeSection';
 import HomeSectionAdd from './HomeSectionAdd';
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <Banner></Banner>

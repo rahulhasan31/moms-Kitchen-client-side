@@ -1,9 +1,11 @@
 import { data } from 'autoprefixer';
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Context/AuthProvider';
+import useTitle from '../Hook/UseTitle';
 import ReviewRow from './ReviewRow';
 
 const Reviews = () => {
+  useTitle('Review')
    
     const [reviews, setReviews] = useState([]);
    

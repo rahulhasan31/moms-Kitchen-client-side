@@ -1,9 +1,10 @@
 import { data } from 'autoprefixer';
 import React from 'react';
+import useTitle from '../Hook/UseTitle';
 
 const AddServices = () => {
 
-
+useTitle("Add Services")
     const handleSubmit=event=>{
         event.preventDefault()
       const form=event.target

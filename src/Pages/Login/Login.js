@@ -2,8 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/in2.png'
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../Hook/UseTitle';
 
 const Login = () => {
+    useTitle("Login")
     const [showpass, setShowPass] = useState(false)
     const[error, setError]= useState([])
     const {loginUser, googleSignIn}= useContext(AuthContext)

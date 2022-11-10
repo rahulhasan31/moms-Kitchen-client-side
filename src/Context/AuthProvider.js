@@ -21,6 +21,7 @@ const AuthProvider = ({children}) => {
     }
     const logOut= ()=>{
         setLoading(true)
+        localStorage.removeItem('token')
         return signOut(auth)
         .then(r=>console.log(r))
         .catch(e=>console.error(e))

@@ -37,7 +37,7 @@ const router=createBrowserRouter([
         {
           path:'/services',
           element:<Services></Services>,
-          // loader: ()=> fetch('http://localhost:5000/services')
+          // loader: ()=> fetch('https://photographer-server-eight.vercel.app/services')
         },
         {
          path: '/addService',
@@ -46,7 +46,7 @@ const router=createBrowserRouter([
         {
           path: "/services/:id",
           element: <ServicesDetails></ServicesDetails>,
-          loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`) 
+          loader: ({params})=> fetch(`https://photographer-server-eight.vercel.app/services/${params.id}`) 
         },
        
         {
@@ -56,7 +56,7 @@ const router=createBrowserRouter([
         {
          path:'/edit/:id',
          element:<EditReview></EditReview>,
-         loader : ({params})=> fetch(`http://localhost:5000/reviews/${params.id}`)
+         loader : ({params})=> fetch(`https://photographer-server-eight.vercel.app/reviews/${params.id}`)
         },
         {
           path: '/reviews',

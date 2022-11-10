@@ -7,13 +7,13 @@ const HomeCard = () => {
     const [limitCard, setLimitCard]= useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/')
+        fetch('https://photographer-server-eight.vercel.app/')
         .then(res=>res.json())
         .then(data=> setLimitCard(data))
     },[])
     return (
         <div>
-        <div className='grid grid-cols-1 xl:grid grid-cols-3 mb-5'>
+        <div className='grid grid-cols-1 xl:grid-cols-3 mb-5'>
             
             {
                 limitCard?.map(card=> <HomeCardDetails 

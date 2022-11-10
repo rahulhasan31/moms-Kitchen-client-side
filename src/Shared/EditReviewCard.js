@@ -9,7 +9,7 @@
 //     const handleUpdateUser = event =>{
 //         event.preventDefault();
 //         console.log(user);
-//         fetch(`http://localhost:5000/reviews/${srv._id}`, {
+//         fetch(`https://photographer-server-eight.vercel.app/reviews/${srv._id}`, {
 //             method: 'PUT',
 //             headers: {
 //                 'content-type': 'application/json'

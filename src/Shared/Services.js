@@ -16,7 +16,7 @@ const Services = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/services')
+        fetch('https://photographer-server-eight.vercel.app/services')
         .then(res=>res.json())
         .then(data=>{
             
@@ -27,7 +27,7 @@ const Services = () => {
     },[setService])
     console.log(user);
     return (
-        <div className='grid grid-cols-1 xl:grid grid-cols-3 gap-10'>
+        <div className='grid grid-cols-1 xl:grid-cols-3 gap-10'>
        {
         loading? 
         <div  role="status">

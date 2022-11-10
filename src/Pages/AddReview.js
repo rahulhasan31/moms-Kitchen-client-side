@@ -13,7 +13,7 @@ const AddReview = ({review}) => {
     const [menu1, setMenu1] = useState(false);
     const {serviceName,service, customer, email, _id, message, price}=review
     useEffect(()=>{
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`https://photographer-server-eight.vercel.app/services/${service}`)
         .then(res=> res.json())
    
         .then(data=>setReviewService(data) )

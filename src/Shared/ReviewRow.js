@@ -11,7 +11,7 @@ const ReviewRow = ({review}) => {
    console.log('revice', service,);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`https://photographer-server-eight.vercel.app/services/${service}`)
         .then(res=> res.json())
    
         .then(data=>setReviewService(data) )
@@ -22,8 +22,12 @@ const ReviewRow = ({review}) => {
          const procced= window.confirm('Are you sure delete review?')
 
          if(procced){
-            fetch(`http://localhost:5000/reviews/${id}`, {
-                method : "DELETE"
+            fetch(`https://photographer-server-eight.vercel.app/reviews/${id}`, {
+                method : "DELETE", 
+       
+                    headers:{
+                      authorization : `bear ${localStorage.getItem('token')}`
+                    }
             })
             .then(res=> res.json())
             .then(data =>{

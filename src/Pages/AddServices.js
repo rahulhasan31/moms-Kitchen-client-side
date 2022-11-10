@@ -28,7 +28,7 @@ useTitle("Add Services")
 
       }
 
-      fetch('http://localhost:5000/services', {
+      fetch('https://photographer-server-eight.vercel.app/services', {
         method: 'POST',
         headers :{
             'content-type' : 'application/json'

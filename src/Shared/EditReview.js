@@ -8,7 +8,7 @@ const EditReview = () => {
     // const [service, setService]= useState([])
     // useEffect(()=>{
 
-    //     fetch(`http://localhost:5000/reviews`)
+    //     fetch(`https://photographer-server-eight.vercel.app/reviews`)
   
     //     .then(res=> res.json())
     //     .then(data=> setService(data))
@@ -16,7 +16,7 @@ const EditReview = () => {
     const handleUpdateUser = event =>{
         event.preventDefault();
         console.log(user);
-        fetch(`http://localhost:5000/reviews/${reviewUser._id}`, {
+        fetch(`https://photographer-server-eight.vercel.app/reviews/${reviewUser._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

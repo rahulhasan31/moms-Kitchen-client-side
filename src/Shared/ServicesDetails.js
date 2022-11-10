@@ -34,8 +34,8 @@ const ServicesDetails = () => {
          price,
          customer:name, 
          email,
-         message
-
+         message ,
+         created : Date()
        }
 
 
@@ -81,7 +81,9 @@ const ServicesDetails = () => {
 </div>
 
       <div className='grid grid-cols-1  mt-6 gap-10'>
-      <form onSubmit={handlePlaceSubmit}>
+      {
+        user?.uid ?
+        <form onSubmit={handlePlaceSubmit}>
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
         <input name='name' type="name" readOnly defaultValue={user?.displayName} placeholder="Type here" className="input input-bordered w-full " />
@@ -98,6 +100,15 @@ const ServicesDetails = () => {
          
         </div>
        </form>
+        :
+        <div className="bg-white shadow-lg rounded xl:w-1/3 lg:w-5/12 md:w-1/2 w-full lg:px-10 sm:px-6 sm:py-10 px-2 py-6">
+        <p tabIndex={0} className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">
+        Please login to add a review 
+        <br />
+        <Link to={'/login'}><button  className="btn btn-wide btn-warning mt-4">Login</button></Link>
+        </p>
+        </div>
+      }
       </div>
       
             {

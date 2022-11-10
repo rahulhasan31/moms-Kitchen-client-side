@@ -15,7 +15,7 @@ const Reviews = () => {
     
    useEffect(()=>{
      
-    fetch(`http://localhost:5000/reviews?email=${user?.email}` , {
+    fetch(`https://photographer-server-eight.vercel.app/reviews?email=${user?.email}` , {
        
     headers:{
       authorization : `bear ${localStorage.getItem('token')}`

@@ -13,7 +13,7 @@ const HomeCard = () => {
     },[])
     return (
         <div>
-        <div className='grid grid-cols-1 xl:grid-cols-3 mb-5'>
+        <div className='grid grid-cols-1 gap-10 xl:grid-cols-3 mb-5'>
             
             {
                 limitCard?.map(card=> <HomeCardDetails 

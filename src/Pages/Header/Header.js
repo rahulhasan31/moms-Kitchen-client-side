@@ -12,7 +12,7 @@ const Header = () => {
 
       <Link className='font-semibold ' to={'/services'}>Services</Link>
 
-
+      <Link className='font-semibold ' to={'/blog'}>Blog</Link>
     </li>
     {
       user?.uid ?

@@ -23,7 +23,7 @@ const Reviews = () => {
 
    },[user?.email])
 
-  
+  console.log(reviews);
  
 
 

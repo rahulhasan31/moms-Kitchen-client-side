@@ -1,6 +1,7 @@
 import Main from "../LayOut/Main";
 import AddReview from "../Pages/AddReview";
 import AddServices from "../Pages/AddServices";
+import Blog from "../Pages/Blog";
 import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -53,7 +54,7 @@ const router=createBrowserRouter([
             element: <PrivateRoute><Reviews></Reviews></PrivateRoute>
         },
         {
-         path:'/reviews/:id',
+         path:'/edit/:id',
          element:<EditReview></EditReview>,
          loader : ({params})=> fetch(`http://localhost:5000/reviews/${params.id}`)
         },
@@ -61,6 +62,10 @@ const router=createBrowserRouter([
           path: '/reviews',
           element:<AddReview></AddReview>, 
         
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
         }
     
     ]

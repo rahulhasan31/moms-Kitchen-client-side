@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const EditReview = () => {
     const reviewUser=useLoaderData()
     const [user, setUser] = useState(reviewUser);
     console.log(reviewUser);
+    // const [service, setService]= useState([])
+    // useEffect(()=>{
 
+    //     fetch(`http://localhost:5000/reviews`)
+  
+    //     .then(res=> res.json())
+    //     .then(data=> setService(data))
+    // },[])
     const handleUpdateUser = event =>{
         event.preventDefault();
         console.log(user);

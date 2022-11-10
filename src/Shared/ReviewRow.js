@@ -51,7 +51,7 @@ const ReviewRow = ({review}) => {
             </div>
             <button onClick={()=>handelDelete(_id)} className='btn btn-error'>delete</button>
 
-           <Link to={`/reviews/${_id}`}> <button className='btn btn-error'>Edit</button></Link>
+           <Link to={`/edit/${_id}`}> <button className='btn btn-error'>Edit</button></Link>
             
             <div className="w-full flex justify-start items-start flex-col bg-gray-50 p-8">
                 <div className="flex flex-col md:flex-row justify-between w-full">

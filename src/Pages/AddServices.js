@@ -1,6 +1,8 @@
 import { data } from 'autoprefixer';
 import React from 'react';
 import useTitle from '../Hook/UseTitle';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddServices = () => {
 
@@ -33,8 +35,8 @@ useTitle("Add Services")
       .then(res=>res.json())
       .then(data=> {
         if(data.acknowledged){
-            alert('Services Added Done')
-            form.rest()
+            toast("Added successfully")
+            form.reset()
         }
         console.log(data);
       })
@@ -53,7 +55,7 @@ useTitle("Add Services")
           <input type="submit" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
 
           </form>
-
+          <ToastContainer />
         </div>
     );
 };

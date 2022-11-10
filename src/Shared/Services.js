@@ -7,7 +7,8 @@ import ServicesCard from './ServicesCard';
 
 const Services = () => {
     useTitle('Services')
-    const {user}= useContext(AuthContext)
+    const {user, loading}= useContext(AuthContext)
+    
     // const services= useLoaderData()
     const [services , setService]= useState([])
 

@@ -14,11 +14,11 @@ const ServicesDetails = () => {
    
     useEffect(()=>{
 
-      fetch(`http://localhost:5000/reviews/${_id}`)
+      fetch(`http://localhost:5000/reviews/service/${_id}`)
 
       .then(res=> res.json())
       .then(data=> setAddReview(data))
-  },[])
+  },[addReview])
    
    
     const handlePlaceSubmit= event=>{

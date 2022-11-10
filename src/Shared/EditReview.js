@@ -4,6 +4,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 const EditReview = () => {
     const reviewUser=useLoaderData()
     const [user, setUser] = useState(reviewUser);
+    console.log(reviewUser);
 
     const handleUpdateUser = event =>{
         event.preventDefault();
@@ -49,5 +50,4 @@ const EditReview = () => {
         </div>
     );
 };
-
 export default EditReview;

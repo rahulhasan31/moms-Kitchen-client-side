@@ -10,13 +10,15 @@ const Header = () => {
     <li>
       <Link className='font-semibold ' to={'/'}>Home</Link>
 
+      <Link className='font-semibold ' to={'/services'}>Services</Link>
+
 
     </li>
     {
       user?.uid ?
       <>
       <li>
-        <Link className='font-semibold' to={'/services'}>Services</Link>
+        <Link className='font-semibold' to={'/addService'}>Add Services</Link>
       </li>
       <li>
         <Link className='font-semibold' to={'/reviews'}>My Reviews</Link>

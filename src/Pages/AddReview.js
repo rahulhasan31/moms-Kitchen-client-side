@@ -1,57 +1,34 @@
-import { data } from 'autoprefixer';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 
-const ReviewRow = ({review}) => {
+
+
+const AddReview = ({review}) => {
+    const [reviewService, setReviewService]= useState()
     const {user}= useContext(AuthContext)
     const [menu, setMenu] = useState(true);
-    const [reviewService, setReviewService]= useState()
+    const [menu1, setMenu1] = useState(false);
     const {serviceName,service, customer, email, _id, message, price}=review
-   console.log('revice', service,);
-
     useEffect(()=>{
         fetch(`http://localhost:5000/services/${service}`)
         .then(res=> res.json())
    
         .then(data=>setReviewService(data) )
     },[service])
-   console.log(reviewService);
-
-     const handelDelete=id=>{
-         const procced= window.confirm('Are you sure delete review?')
-
-         if(procced){
-            fetch(`http://localhost:5000/reviews/${id}`, {
-                method : "DELETE"
-            })
-            .then(res=> res.json())
-            .then(data =>{
-                console.log(data);
-                if(data.deletedCount > 0 ){
-                   alert('deleted success')
-                   const remainin= review.filter(r=> r._id !== id)
-                   setReviewService(remainin)
-                }
-
-            })
-
-         }
-     }
-
-
-
+   console.log('added',review);
+    
     return (
-        <form >
-            <div className="py-12 px-4 md:px-6 2xl:px-0 2xl:container 2xl:mx-auto flex justify-center items-center">
+        <div>
+            
+    
+             <div className="py-12 px-4 md:px-6 2xl:px-0 2xl:container 2xl:mx-auto flex justify-center items-center">
         <div className="flex flex-col justify-start items-start w-full space-y-8">
             
             <div className="flex justify-start items-start">
                 <p className="text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800">Reviews</p>
             </div>
-            <button onClick={()=>handelDelete(_id)} className='btn btn-error'>delete</button>
-
-           <Link to={`/reviews/${_id}`}> <button className='btn btn-error'>Edit</button></Link>
+           
             
             <div className="w-full flex justify-start items-start flex-col bg-gray-50 p-8">
                 <div className="flex flex-col md:flex-row justify-between w-full">
@@ -114,7 +91,11 @@ const ReviewRow = ({review}) => {
                 </div>
                 {/* className={"md:block " + (menu1 ? "block" : "hidden")} */}
                 <div className={"md:block " + (menu ? "block" : "hidden")}>
-                    <p className="mt-3 text-base leading-normal text-gray-600 w-full md:w-9/12 xl:w-5/6">{message}</p>
+              <p className="mt-3 text-base leading-normal text-gray-600 w-full md:w-9/12 xl:w-5/6">Review:{message}</p>
+
+             <p className="mt-3 text-base leading-normal text-gray-600 w-full md:w-9/12 xl:w-5/6">Email:{email}</p>
+
+             <p className="mt-3 text-base leading-normal text-gray-600 w-full md:w-9/12 xl:w-5/6">Name:{customer}</p>
                     <div className="hidden md:flex mt-6 flex-row justify-start items-start space-x-4">
                         <div>
                         {
@@ -152,15 +133,11 @@ const ReviewRow = ({review}) => {
                     </div>
                     <div className="mt-6 flex justify-start items-center flex-row space-x-2.5">
                         <div>
-                        <img className='mt-2' src={user?.photoURL}
-               
-              style={{height:'40px'}}
-             >
-
-            </img>
+                       
+                        <img src="https://i.ibb.co/RCTGZTc/Mask-Group-1.png" alt="girl-avatar" />
                         </div>
                         <div className="flex flex-col justify-start items-start space-y-2">
-                            <p className="text-base font-medium leading-none text-gray-800">{user.displayName}</p>
+                            <p className="text-base font-medium leading-none text-gray-800"></p>
                             <p className="text-sm leading-none text-gray-600">10 nav 2022</p>
                         </div>
                     </div>
@@ -168,8 +145,12 @@ const ReviewRow = ({review}) => {
             </div>
         </div>
     </div>
-        </form>
+
+
+
+            
+        </div>
     );
 };
 
-export default ReviewRow;
+export default AddReview;

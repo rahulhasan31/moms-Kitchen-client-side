@@ -1,14 +1,22 @@
-import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+
+import React, { useContext, useEffect, useState } from 'react';
+
 import { AuthContext } from '../Context/AuthProvider';
 import ServicesCard from './ServicesCard';
 
 const Services = () => {
     const {user}= useContext(AuthContext)
-    const services= useLoaderData()
+    // const services= useLoaderData()
+    const [services , setService]= useState([])
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/services')
+        .then(res=>res.json())
+        .then(data=> setService(data))
+    },[setService])
     console.log(user);
     return (
-        <div className='grid-cols-1 xl:grid grid-cols-3 gap-10'>
+        <div className='grid grid-cols-1 xl:grid grid-cols-3 gap-10'>
             
             {
                 services.map(service=> <ServicesCard

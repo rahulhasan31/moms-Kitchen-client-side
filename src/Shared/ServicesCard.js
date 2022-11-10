@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
@@ -6,6 +6,8 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 const ServicesCard = ({service}) => {
     const {_id , price,img, description, title }= service
     console.log(service);
+    
+
     return (
         <div>
           

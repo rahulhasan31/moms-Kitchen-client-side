@@ -1,12 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
+import AddReview from '../Pages/AddReview';
+
 
 
 const ServicesDetails = () => {
     const {_id , price,img, description, title }= useLoaderData()
     const {user}= useContext(AuthContext)
 
+    const[addReview, setAddReview]= useState([])
+    console.log(addReview);
+   
+    useEffect(()=>{
+
+      fetch(`http://localhost:5000/reviews/${_id}`)
+
+      .then(res=> res.json())
+      .then(data=> setAddReview(data))
+  },[])
+   
+   
     const handlePlaceSubmit= event=>{
        event.preventDefault()
        const form=event.target
@@ -44,14 +58,6 @@ const ServicesDetails = () => {
         }
        })
        .catch(e=>console.log(e))
-
-
-
-
-
-
-
-
 
     }
     
@@ -93,7 +99,13 @@ const ServicesDetails = () => {
         </div>
        </form>
       </div>
-
+      
+            {
+              addReview.map(review=> <AddReview
+               key={review._id}
+               review={review}
+              ></AddReview>)
+            }
         </div>
     );
 };

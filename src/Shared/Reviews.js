@@ -6,6 +6,7 @@ import ReviewRow from './ReviewRow';
 const Reviews = () => {
    
     const [reviews, setReviews] = useState([]);
+   
     const {user}= useContext(AuthContext)
 
 
@@ -20,6 +21,9 @@ const Reviews = () => {
 
    },[user?.email])
 
+  
+ 
+
 
 
 
@@ -33,6 +37,7 @@ const Reviews = () => {
                 reviews.map(review=> <ReviewRow
                 key={review._id}
                 review={review}
+               
                 ></ReviewRow>)
               }
               </>

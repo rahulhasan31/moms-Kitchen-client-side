@@ -47,15 +47,16 @@ useTitle("Add Services")
     }
     return (
         <div>
+          <h1 className='text-center text-4xl font-bold'><span className='text-red-500'>Add </span>Service</h1>
             
           <form onSubmit={handleSubmit} className='grid grid-cols-1 xl:grid-cols-1 gap-4 text-center' >
 
-          <input name='title' type="text" placeholder="Title" className="input input-bordered w-full max-w-xs" />
-          <input name='img' type="text" placeholder="PhotoURl" className="input input-bordered w-full max-w-xs" />
-          <input name='price' type="text" placeholder="Price" className="input input-bordered w-full max-w-xs" />
-          <input name='description' type="text" placeholder="description" className="input input-bordered w-full max-w-xs" />
+          <input name='title' type="text" placeholder="Title" required className="input input-bordered w-full max-w-xs" />
+          <input name='img' type="text" placeholder="PhotoURl" required className="input input-bordered w-full max-w-xs" />
+          <input name='price' type="text" placeholder="Price" required className="input input-bordered w-full max-w-xs" />
+          <input name='description' type="text" required placeholder="description" className="input input-bordered w-full max-w-xs" />
           
-          <input type="submit" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+          <input type="submit" placeholder="Type here" className="input input-bordered mb-5 max-w-xs inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-sky-500 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none " />
 
           </form>
           <ToastContainer />

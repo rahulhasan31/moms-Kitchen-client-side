@@ -18,7 +18,7 @@ const ServicesDetails = () => {
 
       .then(res => res.json())
       .then(data => setAddReview(data))
-  }, [addReview])
+  }, [])
 
 
   const handlePlaceSubmit = event => {
@@ -63,7 +63,9 @@ const ServicesDetails = () => {
 
 
   return (
-    <div className='grid grid-cols-1 '>
+    <div data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500" className='grid grid-cols-1 '>
       
 
       <div className="card lg:card-side bg-base-100 shadow-xl mb-10">

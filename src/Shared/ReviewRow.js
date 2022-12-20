@@ -22,12 +22,8 @@ const ReviewRow = ({review}) => {
          const procced= window.confirm('Are you sure delete review?')
 
          if(procced){
-            fetch(`https://photographer-server-eight.vercel.app/reviews/${id}`, {
-                method : "DELETE", 
-       
-                    headers:{
-                      authorization : `bear ${localStorage.getItem('token')}`
-                    }
+            fetch(` https://photographer-server-eight.vercel.app/reviews/${id}`, {
+                method : "DELETE"
             })
             .then(res=> res.json())
             .then(data =>{
@@ -46,7 +42,9 @@ const ReviewRow = ({review}) => {
 
 
     return (
-        <form >
+        <form data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine" >
             <div className="py-12 px-4 md:px-6 2xl:px-0 2xl:container 2xl:mx-auto flex justify-center items-center">
         <div className="flex flex-col justify-start items-start w-full space-y-8">
             

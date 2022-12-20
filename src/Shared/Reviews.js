@@ -15,26 +15,15 @@ const Reviews = () => {
     
    useEffect(()=>{
      
-    fetch(`https://photographer-server-eight.vercel.app/reviews?email=${user?.email}` , {
-       
-    headers:{
-      authorization : `bear ${localStorage.getItem('token')}`
-    }
-
-    })
-    .then(res=> {
-      if (res.status === 401 || res.status === 403) {
-        return logOut();
-    }
-       return res.json()
-    })
+    fetch(`https://photographer-server-eight.vercel.app/reviews?email=${user?.email}`)
+    .then(res=> res.json())
     .then(data => {
       setReviews(data)
     })
    
 
 
-   },[user?.email, logOut])
+   },[user?.email])
 
   console.log(reviews);
  

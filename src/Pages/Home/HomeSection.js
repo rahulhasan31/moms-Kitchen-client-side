@@ -4,7 +4,9 @@ const HomeSection = () => {
 
     const [menu, setMenu] = useState(false);
     return (
-        <div>
+        <div data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500">
          <div>
             <section>
             <div className="w-full bg-blue-100 relative pb-10 px-6 xl:px-0">

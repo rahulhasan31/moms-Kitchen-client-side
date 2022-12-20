@@ -2,12 +2,13 @@ import React from 'react';
 
 const HomeOwner = () => {
     return (
-        <div>
+        <div data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom">
             <div className="bg-blue-100  mt-10">
         <div className="py-14 px-3">
           <div className="lg:max-w-[1440px] relative inset-0 md:max-w-[744px] max-w-[375px] mx-auto bg-white lg:px-20 md:px-6 px-4 lg:py-20 md:py-12 py-9">
             <div className="relative">
-              <img
+              <img alt=''
                 src="https://wp-modula.com/wp-content/uploads/2019/01/Freelance-Photography-1-e1549374906734.png"
                 className="w-full object-cover lg:h-[330px] lg:block md:hidden hidden"
               />

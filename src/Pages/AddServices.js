@@ -46,7 +46,7 @@ useTitle("Add Services")
       .catch(e=>console.log(e))
     }
     return (
-        <div>
+        <div className='px-6 '>
           <h1 className='text-center text-4xl font-bold'><span className='text-red-500'>Add </span>Service</h1>
             
           <form onSubmit={handleSubmit} className='grid grid-cols-1 xl:grid-cols-1 gap-4 text-center' >

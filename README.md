@@ -9,7 +9,7 @@ This project was  [Create React App](https://github.com/facebook/create-react-ap
 ### `Live Link`
 
 hosting firebase.\
-Open [https://photographer-client.web.app/](https://moms-kitchen-11.netlify.app/) to view it in your browser.
+Open [https://moms-kitchen-11.netlify.app/](https://moms-kitchen-11.netlify.app/) to view it in your browser.
 
 
 ### `React Router Dom v6.4`
@@ -31,7 +31,7 @@ Lottie Animation -> LottieFiles
 
 [https://wickedblocks.dev/] [https://kutty.netlify.app/components/] [https://www.mambaui.com/] [https://tailblocks.cc/] [https://tailwindcomponents.com/components] [https://www.tailwind-kit.com/components] [https://merakiui.com/]
 
-## programming future-Complete
+## moms-Kitchen
 
 Live Link -> AuthenTech.
 
@@ -44,11 +44,11 @@ Context API Doc -> COntext API.
 React Router Dom Doc -> React Router Dom.
 
 Tailwind CSS Doc -> Tailwind CSS.
-## photographer  future- server Side Use
+## moms-Kitchen- server Side Use
 
 mongoDb -> NO SQL
 
-## photographer  future- client Side Use
+## moms-Kitchen- client Side Use
 
 1. react 
 2.cess tailwind

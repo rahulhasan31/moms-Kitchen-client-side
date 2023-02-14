@@ -7,7 +7,7 @@ import 'aos/dist/aos.css';
 function App() {
   AOS.init();
   return (
-    <div  className="max-w-screen-xl  mx-auto  ">
+    <div  className="max-w-screen-xl  mx-auto app ">
       <RouterProvider router={router}>
    
       </RouterProvider>

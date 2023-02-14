@@ -68,7 +68,7 @@ const ServicesDetails = () => {
     data-aos-duration="1500" className='grid grid-cols-1 '>
       
 
-      <div className="card lg:card-side bg-base-100 shadow-xl mb-10">
+      {/* <div className="card lg:card-side bg-base-100 shadow-xl mb-10">
         <figure className="px-10 pt-10">
           <img src={img} alt="Shoes" className="rounded-xl" />
         </figure>
@@ -81,7 +81,21 @@ const ServicesDetails = () => {
             <Link to={`/reviews`}><button className="btn btn-primary">My Reviews</button></Link>
           </div>
         </div>
-      </div>
+      </div> */}
+      <div className="hero  bg-base-200">
+  <div className="hero-content flex-col lg:flex-row">
+    <img alt='' src={img}  className="w-96" />
+    <div>
+      <h1 className="text-5xl font-bold">{title}</h1>
+      <p className="py-6">{description}</p>
+      <p className=' badge badge-secondary mb-2'>Available</p>
+      <p className=' badge badge-secondary ml-3'>Food</p>
+      <p className=' badge badge-secondary ml-3 text-xl py-3'>${price}</p>
+      <br/>
+      <button className="btn btn-primary"> <Link to={`/reviews`}><button className="">My Reviews</button></Link></button>
+    </div>
+  </div>
+</div>
 
       <div className='grid grid-cols-1  mt-6 gap-10'>
       <div className="flex justify-start items-start">

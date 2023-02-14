@@ -9,7 +9,7 @@ This project was  [Create React App](https://github.com/facebook/create-react-ap
 ### `Live Link`
 
 hosting firebase.\
-Open [https://photographer-client.web.app/](https://programming-course-6d620.web.app/) to view it in your browser.
+Open [https://photographer-client.web.app/](https://moms-kitchen-11.netlify.app/) to view it in your browser.
 
 
 ### `React Router Dom v6.4`
